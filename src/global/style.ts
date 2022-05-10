@@ -18,7 +18,13 @@ a{
 button{
     cursor: pointer;
     border: none;
+    background-color: #ff4800;
+    color:white;
+    padding: 5px 10px;
+    font-size: 16px;
+    font-weight: 800;
 }
+
 ul, li{
     list-style: none;
 }
