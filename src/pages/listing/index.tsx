@@ -3,26 +3,13 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { TableComponent } from "../../components/table";
 import { IResponse } from "../../types";
-import {
-  MdOutlineArrowBackIosNew,
-  MdOutlineArrowForwardIos,
-} from "react-icons/md";
+import { PaginationComponent } from "../../components/pagination";
+import { SearchComponent } from "../../components/search";
 
 export const ListingPage = () => {
   const [vunerabilities, setVunerabilities] = useState<IResponse[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [endPointFilter, setEndPointFilter] = useState("&date=desc");
-
-  const handleClickPagination = (page: string) => {
-    if (page === "previous" && currentPage > 1) {
-      setCurrentPage(currentPage - 1);
-    } else if (
-      page === "next" &&
-      (vunerabilities.length === 50 || currentPage < 11)
-    ) {
-      setCurrentPage(currentPage + 1);
-    }
-  };
 
   useEffect(() => {
     axios
@@ -38,18 +25,21 @@ export const ListingPage = () => {
 
   return (
     <Container>
+      <div className="header">
+        <SearchComponent setEndPointFilter={setEndPointFilter} />
+      </div>
+
       <TableComponent
         vunerabilities={vunerabilities}
         setEndPointFilter={setEndPointFilter}
         endPointFilter={endPointFilter}
       />
-      <div>
-        <MdOutlineArrowBackIosNew
-          onClick={() => handleClickPagination("previous")}
-        />
-        {currentPage}
-        <MdOutlineArrowForwardIos
-          onClick={() => handleClickPagination("next")}
+
+      <div className="footer">
+        <PaginationComponent
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+          listSize={vunerabilities.length}
         />
       </div>
     </Container>

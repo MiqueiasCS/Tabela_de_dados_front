@@ -1,5 +1,4 @@
 import { createGlobalStyle } from "styled-components";
-// import Cursor from "../Assets/FrontEnd IllusionRO/Normal Select.cur";
 
 export default createGlobalStyle`
 *{

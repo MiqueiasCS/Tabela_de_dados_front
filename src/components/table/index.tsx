@@ -1,12 +1,6 @@
 import { Container } from "./styles";
-import { Dispatch, FunctionComponent } from "react";
-import { IResponse } from "../../types";
-
-interface IVunerabilities {
-  vunerabilities: IResponse[];
-  setEndPointFilter: Dispatch<React.SetStateAction<string>>;
-  endPointFilter: string;
-}
+import { FunctionComponent } from "react";
+import { IVunerabilities } from "../../types";
 
 export const TableComponent: FunctionComponent<IVunerabilities> = ({
   vunerabilities,
