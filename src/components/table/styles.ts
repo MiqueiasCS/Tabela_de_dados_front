@@ -58,14 +58,26 @@ export const Container = styled.div`
 
   .container-content {
     height: 75vh;
-    overflow-y: scroll;
+  }
+`;
+interface IContentRowContainer {
+  severity: string;
+}
+
+export const ContentRowContainer = styled.div<IContentRowContainer>`
+  cursor: pointer;
+  padding: 8px 0;
+
+  :hover {
+    color: blue;
   }
 
-  .container-content .container_row {
-    cursor: pointer;
-
-    :hover {
-      color: blue;
-    }
+  div.col_severity {
+    background-color: ${({ severity }) =>
+      severity === "Crítico"
+        ? "red"
+        : severity === "Alto"
+        ? "#ff000069"
+        : "transparent"};
   }
 `;

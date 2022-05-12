@@ -1,12 +1,15 @@
-import { Container } from "./styles";
+import { Container, ContentRowContainer } from "./styles";
 import { FunctionComponent } from "react";
 import { IVunerabilities } from "../../types";
+import { useNavigate } from "react-router-dom";
 
 export const TableComponent: FunctionComponent<IVunerabilities> = ({
-  vunerabilities,
+  currentItens,
   setEndPointFilter,
   endPointFilter,
 }) => {
+  const navigate = useNavigate();
+
   const handleFilter = (filter: string) => {
     if (endPointFilter.includes(filter)) {
       let removedDateFilter = endPointFilter.replace(filter, "");
@@ -56,8 +59,13 @@ export const TableComponent: FunctionComponent<IVunerabilities> = ({
       </div>
 
       <div className="container-content">
-        {vunerabilities.map((vunerability, index) => (
-          <div className="container_row" key={index}>
+        {currentItens.map((vunerability, index) => (
+          <ContentRowContainer
+            className="container_row"
+            key={index}
+            onClick={() => navigate(`/dashboard/${vunerability.hostname}`)}
+            severity={vunerability.severity}
+          >
             <div className="container_col col_hostname">
               {vunerability.hostname}
             </div>
@@ -77,7 +85,7 @@ export const TableComponent: FunctionComponent<IVunerabilities> = ({
             <div className="container_col col_publication_date">
               {vunerability.publication_date || "--"}
             </div>
-          </div>
+          </ContentRowContainer>
         ))}
       </div>
     </Container>

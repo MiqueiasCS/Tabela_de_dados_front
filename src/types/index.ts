@@ -1,6 +1,6 @@
 import { Dispatch } from "react";
 
-export interface IResponse {
+export interface IItens {
   id: number;
   fixed: boolean;
   title: string;
@@ -11,16 +11,24 @@ export interface IResponse {
   hostname: string;
 }
 
+export interface IResponse {
+  total: number;
+  enviados: number;
+  itens: IItens[];
+}
+
 export interface IVunerabilities {
-  vunerabilities: IResponse[];
+  currentItens: IItens[];
   setEndPointFilter: Dispatch<React.SetStateAction<string>>;
   endPointFilter: string;
 }
 
 export interface IPagination {
-  setCurrentPage: Dispatch<React.SetStateAction<number>>;
-  currentPage: number;
-  listSize: number;
+  setCurrentApiRequestPage: Dispatch<React.SetStateAction<number>>;
+  currentApiRequestPage: number;
+  vunerabilities: IResponse;
+  setCurrentItens: Dispatch<React.SetStateAction<IItens[]>>;
+  currentItens: IItens[];
 }
 
 export interface ISearch {

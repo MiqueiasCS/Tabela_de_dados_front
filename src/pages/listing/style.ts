@@ -6,6 +6,14 @@ export const Container = styled.div`
 
   .header {
     padding: 16px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    > svg {
+      font-size: 20px;
+      cursor: pointer;
+    }
   }
 
   .footer {
