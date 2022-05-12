@@ -1,6 +1,6 @@
 ## Tabela
 
-Projeto criado para pôr em prática meus conhecimentos. Ao logar é mostrada uma tabela com uma lista de itens carregada de uma api. É possível buscar os itens pelo nome e filtrar os itens por cvss, data de publicação e fixed ao clicar no cabeçalho dos itens.
+Projeto criado para pôr em prática meus conhecimentos. Ao logar é mostrada uma tabela com uma lista de itens carregada de uma [api](https://github.com/MiqueiasCS/tabela_de_dados_back). É possível buscar os itens pelo nome no campo de pesquisa e filtrar os itens por cvss, data de publicação e fixed ao clicar no cabeçalho dos itens.
 
 ## Tecnologias
 
