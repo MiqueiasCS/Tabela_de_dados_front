@@ -19,16 +19,20 @@ export const ListingPage = () => {
 
   useEffect(() => {
     let token = localStorage.getItem("@token");
-    console.log("lista", token);
+
     if (!token) {
       navigate("/");
     } else {
       axios
         .get(
-          `http://localhost:8000/api/reports/?page=${currentApiRequestPage}${endPointFilter}`
+          `http://localhost:8000/api/reports/?page=${currentApiRequestPage}${endPointFilter}`,
+          {
+            headers: {
+              Authorization: "Token aa16d0051c5d7359e81301e2c27ec5b987e3ee3d",
+            },
+          }
         )
         .then((response) => {
-          console.log(response.data);
           setVunerabilities(response.data);
           setCurrentItens(response.data.itens.slice(0, 10));
         })

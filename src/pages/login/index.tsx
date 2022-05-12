@@ -10,11 +10,10 @@ export const LoginPage = () => {
 
   const handleLogin: FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
-    console.log(data);
+
     axios
       .post(`http://localhost:8000/api/login/`, data)
       .then((response) => {
-        console.log(response.data.token);
         toast.success("Login Efetuado!");
         localStorage.setItem("@token", JSON.stringify(response.data.token));
 

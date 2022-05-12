@@ -47,7 +47,6 @@ export const PaginationComponent: FunctionComponent<IPagination> = ({
       currentPage + 1 < Math.ceil(vunerabilities.enviados / itensPerPage) &&
       page === "next"
     ) {
-      console.log(Math.ceil(vunerabilities.enviados / itensPerPage));
       setCurrentPage(currentPage + 1);
     }
     if (currentPage > 0 && page === "previous") {
@@ -62,8 +61,6 @@ export const PaginationComponent: FunctionComponent<IPagination> = ({
     if (!vunerabilities.itens) {
       setCount(count + 1);
     } else {
-      // console.log("aqui", vunerabilities);
-
       setCurrentItens(vunerabilities.itens.slice(startIndex, endIndex));
     }
   }, [vunerabilities, currentPage, count]);
