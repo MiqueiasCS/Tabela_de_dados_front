@@ -8,7 +8,7 @@ Projeto criado para pôr em prática meus conhecimentos. Ao logar é mostrada um
 - [x] ReactJs
 
 ## Arquitetura da aplicação
-[link](https://drive.google.com/file/d/1UqiLDgUng8MN3o7697y6tdJLU9h-YsJk/view?usp=sharing)
+[Link](https://drive.google.com/file/d/1UqiLDgUng8MN3o7697y6tdJLU9h-YsJk/view?usp=sharing)
 
 ### 🎲 Rodando o Front End
 
@@ -44,6 +44,6 @@ Essa aplicação necessita que o seguinte repositório esteja rodando em desenvo
   - página individual de um hostname. (em construção)
 
 ## Dados
-Para logar use o seguinte login:
+Use os seguintes dados para o login:
 - email : testador@mail.com
 - password: 123asd
