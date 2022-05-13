@@ -36,11 +36,15 @@ Essa aplicação necessita que o seguinte repositório esteja rodando em desenvo
 
 ## Paginas
 
-- "/"
+- **"/"**
   - página de login
-- "/table"
+- **"/table"**
   - página da tabela. Para ter acesso é necesário estar logado.
-- "/dash"
+  - Os dados são mostrados na tabela inicialmente em ordem decrescente de cvss e publication_date. É possível inverter a ordem para crescente individualmente ao clicar no cabeçalho de uma das colunas. 
+  - Por padrão a filtragem sempre é aplicada por cvss **E** publication_date. 
+  - Exemplo: Ao clicar no cabeçalho _publication_date_ será exibida uma lista ordenada da maior para a menor nota cvss e para cada nota de mesmo valor será feita uma ordenação da data mais antiga até a mais nova.
+  - Existe um componente de busca que permite encontrar uma lista de hostnames que contenham a palavra digitada
+- **"dashboard/< hostname >"**
   - página individual de um hostname. (em construção)
 
 ## Dados
