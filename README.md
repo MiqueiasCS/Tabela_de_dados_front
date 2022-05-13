@@ -32,7 +32,7 @@ $ yarn start
 ```
 
 ## Requisitos
-Essa aplicação necessita que o seguinte repositório esteja rodando em desenvovimento [link](https://github.com/MiqueiasCS/tabela_de_dados_back)
+Essa aplicação necessita que o seguinte repositório esteja rodando em desenvolvimento [link](https://github.com/MiqueiasCS/tabela_de_dados_back)
 
 ## Paginas
 
